@@ -331,6 +331,21 @@
     ]
   },
   {
+    "name": "t:settings_schema.loading.name",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "loading_image",
+        "label": "t:settings_schema.loading.settings.image.label"
+      },
+      {
+        "type": "image_picker",
+        "id": "loading_background",
+        "label": "t:settings_schema.loading.settings.background.label"
+      }
+    ]
+  },
+  {
     "name": "t:settings_schema.currency_format.name",
     "settings": [
       {

@@ -72,6 +72,19 @@
         "collection"
       ]
     },
+    "testimonial": {
+      "type": "testimonial",
+      "blocks": {
+        "text": {
+          "type": "text"
+        }
+      },
+      "block_order": [
+        "text",
+        "text",
+        "text"
+      ]
+    },
     "video": {
       "type": "video"
     },
@@ -96,6 +109,7 @@
     }
   },
   "order": [
+    "testimonial",
     "image_banner",
     "rich_text",
     "featured_products",

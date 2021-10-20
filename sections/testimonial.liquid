@@ -1,0 +1,144 @@
+<script>
+    window.onload = function() {
+        new Splide('#slider_component_reviews', {
+            type: 'loop',
+            perPage: 3,
+            pagination: false,
+            breakpoints: {
+                900: {
+                    perPage: 2,
+                },
+                640: {
+                    perPage: 1,
+                },
+
+            }
+        }).mount();
+    }
+</script>
+
+<div class="slider_component">
+  <div id="slider_component_reviews" class="splide">
+    <div class="splide__arrows">
+          <button class="splide__arrow splide__arrow--prev">
+              <i class="pearly-arrow-left2"></i>
+          </button>
+          <button class="splide__arrow splide__arrow--next">
+              <i class="pearly-arrow-right2"></i>
+          </button>
+    </div>
+    <div class="splide__track">
+      <ul class="splide__list">
+        {%- for block in section.blocks -%}
+          <li class="splide__slide">
+              <div class="slider_component_card">
+                  <div class="slider_component_card_image">
+                    <img
+                      src="{{ block.settings.image | img_url: '1500x' }}"
+                      alt="{{ block.settings.image.alt | escape }}"
+                      loading="lazy"
+                      width="{{ block.settings.image.width }}"
+                      height="{{ block.settings.image.height }}"
+                    >
+                  </div>
+                  <div class="slider_component_card_content">
+                      <p>“{{ block.settings.sentence | escape }}”</p>
+                      <p>— {{ block.settings.author | escape }}</p>
+                  </div>
+              </div>
+          </li>
+        {%- endfor -%}
+      </ul>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+   "name":"t:sections.testimonial.name",
+   "tag":"section",
+   "class":"spaced-section collage-section",
+   "settings":[
+      {
+         "type":"text",
+         "id":"heading",
+         "default":"Testemunhos",
+         "label":"t:sections.testimonial.settings.heading.label"
+      },
+      {
+         "type":"select",
+         "id":"desktop_layout",
+         "options":[
+            {
+               "value":"left",
+               "label":"t:sections.testimonial.settings.desktop_layout.options__1.label"
+            },
+            {
+               "value":"right",
+               "label":"t:sections.testimonial.settings.desktop_layout.options__2.label"
+            }
+         ],
+         "default":"left",
+         "label":"t:sections.testimonial.settings.desktop_layout.label"
+      },
+      {
+         "type":"select",
+         "id":"mobile_layout",
+         "options":[
+            {
+               "value":"collage",
+               "label":"t:sections.testimonial.settings.mobile_layout.options__1.label"
+            },
+            {
+               "value":"column",
+               "label":"t:sections.testimonial.settings.mobile_layout.options__2.label"
+            }
+         ],
+         "default":"collage",
+         "label":"t:sections.testimonial.settings.mobile_layout.label"
+      }
+   ],
+   "blocks":[
+      {
+         "type":"text",
+         "name":"t:sections.testimonial.blocks.testimonial.name",
+         "settings":[
+            {
+               "type":"image_picker",
+               "id":"image",
+               "label":"t:sections.testimonial.blocks.testimonial.settings.image.label"
+            },
+            {
+               "type":"textarea",
+               "id":"sentence",
+               "label":"t:sections.testimonial.blocks.testimonial.settings.sentence.label",
+               "default":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc in imperdiet sem."
+            },
+            {
+               "type":"text",
+               "id":"author",
+               "label":"t:sections.testimonial.blocks.testimonial.settings.author.label",
+               "default":"John Doe"
+            }
+         ]
+      }
+   ],
+   "max_blocks":3,
+   "presets":[
+      {
+         "name":"t:sections.testimonial.presets.name",
+         "blocks":[
+            {
+               "type":"text"
+            },
+            {
+               "type":"text"
+            },
+            {
+               "type":"text"
+            }
+         ]
+      }
+   ]
+}
+{% endschema %}

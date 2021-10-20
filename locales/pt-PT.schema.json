@@ -174,6 +174,17 @@
         "paragraph": "Os preços de finalização da compra e carrinho mostram sempre os códigos de moeda. Exemplo: 1,00 USD."
       }
     },
+    "loading": {
+      "name": "Loading",
+      "settings": {
+        "image": {
+          "label": "Imagem"
+        },
+        "background": {
+          "label": "Imagem de fundo"
+        }
+      }
+    },
     "favicon": {
       "name": "Favicon",
       "settings": {
@@ -381,6 +392,73 @@
       },
       "presets": {
         "name": "Colagem"
+      }
+    },
+    "testimonial": {
+      "name": "Testemunhos",
+      "settings": {
+        "heading": {
+          "label": "Título"
+        },
+        "desktop_layout": {
+          "label": "Esquema do desktop",
+          "options__1": {
+            "label": "Bloco esquerdo grande"
+          },
+          "options__2": {
+            "label": "Bloco direito grande"
+          }
+        },
+        "mobile_layout": {
+          "label": "Esquema móvel",
+          "options__1": {
+            "label": "Colagem"
+          },
+          "options__2": {
+            "label": "Coluna"
+          }
+        }
+      },
+      "blocks": {
+        "testimonial": {
+          "settings": {
+            "testimonial": {
+              "label": "Testemunho"
+            },
+            "sentence": {
+              "label": "Frase"
+            },
+            "author": {
+              "label": "Autor"
+            },
+            "image": {
+              "label": "Imagem de fundo"
+            },
+            "color_scheme": {
+              "options__1": {
+                "label": "Destaque 1"
+              },
+              "options__2": {
+                "label": "Destaque 2"
+              },
+              "options__3": {
+                "label": "Fundo 1"
+              },
+              "options__4": {
+                "label": "Fundo 2"
+              },
+              "options__5": {
+                "label": "Inverter"
+              },
+              "label": "Esquema de cores",
+              "info": "Selecione o preenchimento de imagem para tornar a cor visível."
+            }
+          },
+          "name": "Testemunho"
+        }
+      },
+      "presets": {
+        "name": "Testemunhos"
       }
     },
     "collection-list": {
